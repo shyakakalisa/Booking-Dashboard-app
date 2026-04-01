@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Dashboard | Shyaka Kalisa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Booking Dashboard</h1>
+      <p class="subtitle">Professional portfolio project</p>
+    </div>
+    <button id="exportCsvBtn" class="btn secondary">Export CSV</button>
+  </header>
+
+  <main class="container">
+    <section class="stats-grid">
+      <div class="card stat-card">
+        <h2>Total Bookings</h2>
+        <p id="totalBookings">0</p>
+      </div>
+
+      <div class="card stat-card">
+        <h2>Pending</h2>
+        <p id="pendingBookings">0</p>
+      </div>
+
+      <div class="card stat-card">
+        <h2>Confirmed</h2>
+        <p id="confirmedBookings">0</p>
+      </div>
+
+      <div class="card stat-card">
+        <h2>Completed</h2>
+        <p id="completedBookings">0</p>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <div class="card form-card">
+        <h2>Add New Booking</h2>
+        <form id="bookingForm">
+          <div class="form-group">
+            <label for="clientName">Client Name</label>
+            <input type="text" id="clientName" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service</label>
+            <select id="service" required>
+              <option value="">Select a service</option>
+              <option value="Consultation">Consultation</option>
+              <option value="Web Design">Web Design</option>
+              <option value="Coaching Session">Coaching Session</option>
+              <option value="Wellness Session">Wellness Session</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="bookingDate">Date</label>
+              <input type="date" id="bookingDate" required />
+            </div>
+
+            <div class="form-group">
+              <label for="bookingTime">Time</label>
+              <input type="time" id="bookingTime" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status" required>
+              <option value="Pending">Pending</option>
+              <option value="Confirmed">Confirmed</option>
+              <option value="Completed">Completed</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Notes</label>
+            <textarea id="notes" rows="4" placeholder="Optional notes..."></textarea>
+          </div>
+
+          <button type="submit" class="btn primary">Save Booking</button>
+        </form>
+      </div>
+
+      <div class="card bookings-card">
+        <div class="bookings-header">
+          <h2>Bookings</h2>
+          <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search client or service..." />
+            <select id="filterStatus">
+              <option value="All">All Statuses</option>
+              <option value="Pending">Pending</option>
+              <option value="Confirmed">Confirmed</option>
+              <option value="Completed">Completed</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="bookingsList" class="bookings-list">
+          <p class="empty-state">No bookings yet.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
